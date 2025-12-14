@@ -1,0 +1,302 @@
+/* Footer.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.footer {
+  background-color: #f48a1d;
+  /* background-color: #1e3e3a; */
+  color: #ffffff;
+  padding: 4rem 0 1.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.mainContent {
+  display: flex;
+  gap: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Brand Section */
+.brandSection {
+  flex: 0 0 350px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+}
+
+.logoImg {
+  height: 35px;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoTitle {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+}
+
+.logoSubtitle {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.6rem;
+  line-height: 1;
+  letter-spacing: 0.1em;
+}
+
+.brandDescription {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Links Sections */
+.linksSection {
+  flex: 1;
+  min-width: 150px;
+}
+
+.linkTitle {
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.5rem;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linkList li {
+  margin-bottom: 0.85rem;
+}
+
+.link {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  font-weight: 400;
+}
+
+.link:hover {
+  color: #ffffff;
+}
+
+/* Social Media */
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLink {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.socialLink:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Bottom Section */
+.bottomSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.bottomLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.bottomLink {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+}
+
+.bottomLink:hover {
+  color: #ffffff;
+}
+
+/* Responsive Tablet */
+@media (max-width: 992px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .mainContent {
+    flex-wrap: wrap;
+    gap: 3rem;
+  }
+
+  .brandSection {
+    flex: 0 0 100%;
+  }
+
+  .linksSection {
+    flex: 0 0 calc(33.333% - 2rem);
+  }
+
+  .bottomSection {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bottomLinks {
+    gap: 1rem;
+  }
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 0 1.5rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .mainContent {
+    gap: 2rem;
+  }
+
+  .brandSection {
+    flex: 0 0 100%;
+  }
+
+  .linksSection {
+    flex: 0 0 calc(50% - 1rem);
+  }
+
+  .linkTitle {
+    font-size: 0.7rem;
+  }
+
+  .link {
+    font-size: 0.875rem;
+  }
+
+  .bottomLinks {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+/* Large Screens (1440px+) */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1600px;
+    padding: 0 3rem;
+  }
+
+  .footer {
+    padding: 5rem 0 2rem;
+  }
+
+  .mainContent {
+    gap: 5rem;
+  }
+
+  .brandSection {
+    flex: 0 0 400px;
+  }
+
+  .brandDescription {
+    font-size: 1rem;
+  }
+
+  .linkTitle {
+    font-size: 0.8rem;
+  }
+
+  .link {
+    font-size: 1rem;
+  }
+}
+
+/* Full HD (1920px+) */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1800px;
+    padding: 0 4rem;
+  }
+
+  .footer {
+    padding: 6rem 0 2rem;
+  }
+
+  .mainContent {
+    gap: 6rem;
+  }
+
+  .brandSection {
+    flex: 0 0 450px;
+  }
+
+  .logoTitle {
+    font-size: 1.3rem;
+  }
+
+  .logoSubtitle {
+    font-size: 0.65rem;
+  }
+
+  .brandDescription {
+    font-size: 1.05rem;
+  }
+
+  .linkTitle {
+    font-size: 0.85rem;
+  }
+
+  .link {
+    font-size: 1.05rem;
+  }
+
+  .copyright,
+  .bottomLink {
+    font-size: 0.95rem;
+  }
+}
