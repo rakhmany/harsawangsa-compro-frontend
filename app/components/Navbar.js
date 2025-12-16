@@ -2,9 +2,12 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styles from "../style/Navbar.module.css";
 
 export default function Navbar() {
+  const pathname = usePathname();
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>
@@ -28,36 +31,48 @@ export default function Navbar() {
 
         {/* Menu Items */}
         <ul className={styles.menu}>
-          <li>
-            <Link href="/" className={styles.menuLink}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link href="/about" className={styles.menuLink}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link href="/services" className={styles.menuLink}>
-              Services
-            </Link>
-          </li>
-          <li>
-            <Link href="/explore" className={styles.menuLink}>
-              Explore
-            </Link>
-          </li>
-          {/* <li>
-            <Link href="/latest-tips" className={styles.menuLink}>
-              Latest Tips
-            </Link>
-          </li> */}
+            <li>
+              <Link 
+                href="/" 
+                className={`${styles.menuLink} ${pathname === "/" ? styles.menuLinkActive : ""}`}
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="/about" 
+                className={`${styles.menuLink} ${pathname === "/about" ? styles.menuLinkActive : ""}`}
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="/services" 
+                className={`${styles.menuLink} ${pathname === "/services" ? styles.menuLinkActive : ""}`}
+              >
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="/explore" 
+                className={`${styles.menuLink} ${pathname === "/explore" ? styles.menuLinkActive : ""}`}
+              >
+                Explore
+              </Link>
+            </li>
+            {/* <li>
+              <Link href="/latest-tips" className={styles.menuLink}>
+                Latest Tips
+              </Link>
+            </li> */}
         </ul>
 
         {/* Auth Buttons */}
         <div className={styles.authButtons}>
-          <Link href="/contact-us" className={styles.contactusBtn}>
+          <Link href="/contact" className={styles.contactusBtn}>
             Contact Us
           </Link>
           {/* <Link href="/register" className={styles.registerBtn}>

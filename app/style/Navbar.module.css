@@ -58,6 +58,13 @@
 }
 
 /* Menu */
+.navbar-menu-link {
+  font-size: 1.15rem;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+}
+
 .menu {
   display: flex;
   align-items: center;
@@ -72,8 +79,8 @@
 .menuLink {
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
-  font-size: 0.875rem;
   font-weight: 400;
+  letter-spacing: 0.05em;
   transition: color 0.3s ease;
   position: relative;
   white-space: nowrap;
@@ -95,6 +102,15 @@
 }
 
 .menuLink:hover::after {
+  width: 100%;
+}
+
+.menuLinkActive {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.menuLinkActive::after {
   width: 100%;
 }
 
@@ -296,11 +312,11 @@
   }
 
   .menuLink {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
   }
 
   .contactusBtn {
     padding: 0.875rem 2.25rem;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
   }
 }
