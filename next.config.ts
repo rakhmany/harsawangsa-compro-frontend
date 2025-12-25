@@ -1,9 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'standalone', // Optimized for production deployment
-  compress: true, // Enable gzip compression
-  poweredByHeader: false, // Remove X-Powered-By header for security
+  output: 'export', // Static HTML export
+  images: {
+    unoptimized: true, // Required for static export
+  },
+  trailingSlash: true, // Add trailing slash for better compatibility
+  compress: true,
+  poweredByHeader: false,
 };
 
 export default nextConfig;

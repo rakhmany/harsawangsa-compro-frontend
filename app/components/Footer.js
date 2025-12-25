@@ -26,7 +26,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className={styles.brandDescription}>
-              Transforming brands with innovative advertising and media excellence.
+              Harsawangsa Edukasi Indonesia adalah perusahaan yang bergerak di bidang teknologi pendidikan khususnya yang bersifat pengembangan keahlian dan kreatifitas.
             </p>
             <div className={styles.socialLinks}>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>

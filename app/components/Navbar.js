@@ -42,7 +42,7 @@ export default function Navbar() {
             <li>
               <Link 
                 href="/about" 
-                className={`${styles.menuLink} ${pathname === "/about" ? styles.menuLinkActive : ""}`}
+                className={`${styles.menuLink} ${pathname === "/about/" ? styles.menuLinkActive : ""}`}
               >
                 About
               </Link>
@@ -50,7 +50,7 @@ export default function Navbar() {
             <li>
               <Link 
                 href="/services" 
-                className={`${styles.menuLink} ${pathname === "/services" ? styles.menuLinkActive : ""}`}
+                className={`${styles.menuLink} ${pathname === "/services/" ? styles.menuLinkActive : ""}`}
               >
                 Services
               </Link>
@@ -58,7 +58,7 @@ export default function Navbar() {
             <li>
               <Link 
                 href="/explore" 
-                className={`${styles.menuLink} ${pathname === "/explore" ? styles.menuLinkActive : ""}`}
+                className={`${styles.menuLink} ${pathname === "/explore/" ? styles.menuLinkActive : ""}`}
               >
                 Explore
               </Link>

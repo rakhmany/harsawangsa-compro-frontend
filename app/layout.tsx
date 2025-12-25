@@ -15,6 +15,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Harsawangsa",
   description: "Company Profile Harsawangsa",
+  icons: {
+    icon: "/harsawangsa-orange-square.png",
+  },
 };
 
 export default function RootLayout({
