@@ -92,8 +92,6 @@ export default function Footer() {
             <ul className={styles.linkList}>
               <li><Link href="/legal" className={styles.link}>Jalan Taman Wijaya Kusuma, Ps. Baru, Kecamatan Sawah Besar, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10710</Link></li>
             </ul>
-
-            {/* Head Office */}
             <div className={styles.newsletterForm}>
               <p className={styles.newsletterDescription}>
                 Subscribe to get the latest updates and news

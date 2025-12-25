@@ -6,17 +6,453 @@ export default function About() {
   return (
     <>
       <Navbar />
+      <section 
+        className="position-relative overflow-hidden"
+        style={{
+          minHeight: "90vh",
+          background: "linear-gradient(135deg, #5B51D8 0%, #4834DF 50%, #3B2BCC 100%)",
+          paddingTop: "20vh",
+          paddingBottom: "80px",
+          borderBottomLeftRadius: "120px",
+          borderBottomRightRadius: "120px",
+        }}
+      >
+        <div className="container">
+          <div className="row mb-5">
+            <div className="col-lg-6 mb-4 mb-lg-0">
+              <h2 
+                className="fw-bold mb-3"
+                style={{ 
+                  fontSize: "clamp(2rem, 4vw, 2.5rem)",
+                  lineHeight: "1.3",
+                  color: "#1a1a1a"
+                }}
+              >
+                Explore Our Diverse Industry Expertise
+              </h2>
+            </div>
+            <div className="col-lg-6">
+              <p 
+                className="text-muted"
+                style={{ 
+                  fontSize: "1rem",
+                  lineHeight: "1.8",
+                  paddingTop: "10px"
+                }}
+              >
+                ini merupakan hasil karja kami dalam berbagai industri, mencerminkan kemampuan kami untuk beradaptasi dan memberikan solusi inovatif yang sesuai dengan kebutuhan unik setiap sektor.
+              </p>
+            </div>
+          </div>
+
+          {/* Cards Grid */}
+          <div className="row g-3">
+            {/* Card 1 - Mondrian (Small Square) */}
+            <div className="col-lg-3 col-md-6">
+              <div 
+                className="card border-0 overflow-hidden"
+                style={{
+                  borderRadius: "20px",
+                  cursor: "pointer",
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-5px)";
+                  e.currentTarget.style.boxShadow = "0 15px 30px rgba(0,0,0,0.15)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                <div style={{ position: "relative", height: "280px", overflow: "hidden" }}>
+                  <img
+                    src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800"
+                    alt="Mondrian"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover"
+                    }}
+                  />
+                  <div 
+                    style={{
+                      position: "absolute",
+                      bottom: "20px",
+                      left: "20px",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px"
+                    }}
+                  >
+                    <h5 className="text-white fw-bold mb-0" style={{ fontSize: "1.2rem" }}>
+                      Mondrian
+                    </h5>
+                    <div 
+                      style={{
+                        width: "28px",
+                        height: "28px",
+                        borderRadius: "50%",
+                        backgroundColor: "white",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center"
+                      }}
+                    >
+                      <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2 - Artex (Medium Rectangle) */}
+            <div className="col-lg-6 col-md-6">
+              <div 
+                className="card border-0 overflow-hidden"
+                style={{
+                  borderRadius: "20px",
+                  cursor: "pointer",
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-5px)";
+                  e.currentTarget.style.boxShadow = "0 15px 30px rgba(0,0,0,0.15)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                <div style={{ position: "relative", height: "400px", overflow: "hidden" }}>
+                  <img
+                    src="/porto-nino.png"
+                    alt="Nino Room"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover"
+                    }}
+                  />
+                  <div 
+                    style={{
+                      position: "absolute",
+                      bottom: "20px",
+                      left: "20px",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px"
+                    }}
+                  >
+                    <h5 className="text-white fw-bold mb-0" style={{ fontSize: "1.2rem" }}>
+                      Nino Room
+                    </h5>
+                    <div 
+                      style={{
+                        width: "28px",
+                        height: "28px",
+                        borderRadius: "50%",
+                        backgroundColor: "white",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center"
+                      }}
+                    >
+                      <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3 - Nirnia (Small Square) */}
+            <div className="col-lg-3 col-md-6">
+              <div 
+                className="card border-0 overflow-hidden"
+                style={{
+                  borderRadius: "20px",
+                  cursor: "pointer",
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-5px)";
+                  e.currentTarget.style.boxShadow = "0 15px 30px rgba(0,0,0,0.15)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                <div style={{ position: "relative", height: "280px", overflow: "hidden" }}>
+                  <img
+                    src="/porto-robby.png"
+                    alt="Fight Boboy"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover"
+                    }}
+                  />
+                  <div 
+                    style={{
+                      position: "absolute",
+                      bottom: "20px",
+                      left: "20px",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px"
+                    }}
+                  >
+                    <h5 className="text-white fw-bold mb-0" style={{ fontSize: "1.2rem" }}>
+                      Fight Boboy
+                    </h5>
+                    <div 
+                      style={{
+                        width: "28px",
+                        height: "28px",
+                        borderRadius: "50%",
+                        backgroundColor: "white",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center"
+                      }}
+                    >
+                      <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 4 - Brera (Small Square) */}
+            <div className="col-lg-3 col-md-6" style={{ marginTop: "-100px" }}>
+              <div 
+                className="card border-0 overflow-hidden"
+                style={{
+                  borderRadius: "20px",
+                  cursor: "pointer",
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-5px)";
+                  e.currentTarget.style.boxShadow = "0 15px 30px rgba(0,0,0,0.15)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                <div style={{ position: "relative", height: "400px", overflow: "hidden" }}>
+                  <img
+                    src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800"
+                    alt="Brera"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover"
+                    }}
+                  />
+                  <div 
+                    style={{
+                      position: "absolute",
+                      bottom: "20px",
+                      left: "20px",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px"
+                    }}
+                  >
+                    <h5 className="text-white fw-bold mb-0" style={{ fontSize: "1.2rem" }}>
+                      Brera
+                    </h5>
+                    <div 
+                      style={{
+                        width: "28px",
+                        height: "28px",
+                        borderRadius: "50%",
+                        backgroundColor: "white",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center"
+                      }}
+                    >
+                      <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 5 - Alea Pro (Medium Rectangle) */}
+            <div className="col-lg-6 col-md-6">
+              <div 
+                className="card border-0 overflow-hidden"
+                style={{
+                  borderRadius: "20px",
+                  cursor: "pointer",
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-5px)";
+                  e.currentTarget.style.boxShadow = "0 15px 30px rgba(0,0,0,0.15)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                <div style={{ position: "relative", height: "280px", overflow: "hidden" }}>
+                  <img
+                    src="/porto-robby.png"
+                    alt="Boboy Fight"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover"
+                    }}
+                  />
+                  <div 
+                    style={{
+                      position: "absolute",
+                      bottom: "20px",
+                      left: "20px",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px"
+                    }}
+                  >
+                    <h5 className="text-white fw-bold mb-0" style={{ fontSize: "1.2rem" }}>
+                      Boboy Fight
+                    </h5>
+                    <div 
+                      style={{
+                        width: "28px",
+                        height: "28px",
+                        borderRadius: "50%",
+                        backgroundColor: "white",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center"
+                      }}
+                    >
+                      <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 6 - Nirnia (Small Square) */}
+            <div className="col-lg-3 col-md-6" style={{ marginTop: "-100px" }}>
+              <div 
+                className="card border-0 overflow-hidden"
+                style={{
+                  borderRadius: "20px",
+                  cursor: "pointer",
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-5px)";
+                  e.currentTarget.style.boxShadow = "0 15px 30px rgba(0,0,0,0.15)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                <div style={{ position: "relative", height: "400px", overflow: "hidden" }}>
+                  <img
+                    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800"
+                    alt="Nirnia"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover"
+                    }}
+                  />
+                  <div 
+                    style={{
+                      position: "absolute",
+                      bottom: "20px",
+                      left: "20px",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px"
+                    }}
+                  >
+                    <h5 className="text-white fw-bold mb-0" style={{ fontSize: "1.2rem" }}>
+                      Nirnia
+                    </h5>
+                    <div 
+                      style={{
+                        width: "28px",
+                        height: "28px",
+                        borderRadius: "50%",
+                        backgroundColor: "white",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center"
+                      }}
+                    >
+                      <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Explore More Button */}
+          <div className="row mt-5">
+            <div className="col-12 text-center">
+              <button 
+                className="btn btn-dark btn-lg px-5 py-3 rounded-pill d-inline-flex align-items-center gap-3"
+                style={{ 
+                  fontSize: "1rem",
+                  fontWeight: "600",
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
+                  transition: "all 0.3s ease"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-3px)";
+                  e.currentTarget.style.boxShadow = "0 15px 40px rgba(0,0,0,0.25)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.15)";
+                }}
+              >
+                Explore More
+                <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+                  <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+        </div>
+      </section>
 
       {/* Mission Section */}
       <section 
         className="position-relative overflow-hidden"
         style={{
           minHeight: "70vh",
-          paddingTop: "20vh",
+          paddingTop: "100px",
           paddingBottom: "100px",
-          background: "linear-gradient(135deg, #f48a1d 0%, #ff9f3d 100%)",
-          borderBottomLeftRadius: "120px",
-          borderBottomRightRadius: "120px",
+          background: "linear-gradient(135deg, #f48a1d 0%, #ff9f3d 100%)"
         }}
       >
         <div className="container">
@@ -54,7 +490,7 @@ export default function About() {
                     opacity: "0.95"
                   }}
                 >
-                  Menjadi lembaga pendidikan yang mengembangkan insan kreatif melalui ekosistem pendidikan yang inovatif, kolaboratif untuk kemajuan yang berkelanjutan dan berdampak positif untuk masa depan.
+                  Menyediakan platform pendidikan yang inovatif dan inklusif untuk memberdayakan generasi masa depan dengan pengetahuan, keterampilan, dan nilai-nilai yang diperlukan untuk sukses dalam masyarakat global.
                 </p>
                 <div className="d-flex flex-wrap gap-3">
                   <div className="d-flex align-items-center">
@@ -93,7 +529,7 @@ export default function About() {
                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                       </svg>
                     </div>
-                    <span className="text-white" style={{ fontSize: "1rem" }}>Collaborative</span>
+                    <span className="text-white" style={{ fontSize: "1rem" }}>Inclusive Education</span>
                   </div>
                   <div className="d-flex align-items-center">
                     <div 
@@ -112,7 +548,7 @@ export default function About() {
                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                       </svg>
                     </div>
-                    <span className="text-white" style={{ fontSize: "1rem" }}>Have a Positive Impact</span>
+                    <span className="text-white" style={{ fontSize: "1rem" }}>Global Perspective</span>
                   </div>
                 </div>
               </div>
@@ -195,7 +631,7 @@ export default function About() {
           {/* Goals Grid */}
           <div className="row g-4">
             {/* Goal 1 */}
-            <div className="col-lg-3 col-md-6">
+            <div className="col-lg-4 col-md-6">
               <div 
                 className="card border-0 shadow-sm h-100"
                 style={{
@@ -227,17 +663,17 @@ export default function About() {
                     </svg>
                   </div>
                   <h4 className="fw-bold mb-3" style={{ fontSize: "1.3rem", color: "#1a1a1a" }}>
-                    Ekosistem Edukasi Digital
+                    Kualitas Pendidikan
                   </h4>
                   <p className="text-muted mb-0" style={{ fontSize: "0.95rem", lineHeight: "1.7" }}>
-                    Membangun ekosistem edukasi yang terintegrasi digital dengan kurikulum profesional dan keilmuan yang berorientasi keahlian.
+                    Meningkatkan standar pendidikan melalui kurikulum yang komprehensif, metode pengajaran modern, dan teknologi pembelajaran terkini.
                   </p>
                 </div>
               </div>
             </div>
 
             {/* Goal 2 */}
-            <div className="col-lg-3 col-md-6">
+            <div className="col-lg-4 col-md-6">
               <div 
                 className="card border-0 shadow-sm h-100"
                 style={{
@@ -269,17 +705,17 @@ export default function About() {
                     </svg>
                   </div>
                   <h4 className="fw-bold mb-3" style={{ fontSize: "1.3rem", color: "#1a1a1a" }}>
-                    Pemerataan Pendidikan Berkualitas
+                    Aksesibilitas
                   </h4>
                   <p className="text-muted mb-0" style={{ fontSize: "0.95rem", lineHeight: "1.7" }}>
-                    Pemerataan pendidikan yang berkualitas melalui pengembangan ilmu, karir, teknologi kreatif dan inovasi berkelanjutan.
+                    Memberikan akses pendidikan yang merata untuk semua kalangan, tanpa memandang latar belakang sosial ekonomi.
                   </p>
                 </div>
               </div>
             </div>
 
             {/* Goal 3 */}
-            <div className="col-lg-3 col-md-6">
+            <div className="col-lg-4 col-md-6">
               <div 
                 className="card border-0 shadow-sm h-100"
                 style={{
@@ -311,17 +747,17 @@ export default function About() {
                     </svg>
                   </div>
                   <h4 className="fw-bold mb-3" style={{ fontSize: "1.3rem", color: "#1a1a1a" }}>
-                    Integrasi Ekosistem Digital
+                    Inovasi Berkelanjutan
                   </h4>
                   <p className="text-muted mb-0" style={{ fontSize: "0.95rem", lineHeight: "1.7" }}>
-                    Menjebatani dunia Industri dengan pendidikan melalui ekosistem digital yang terintergrasi dan kolaboratif.
+                    Terus berinovasi dalam metode pengajaran dan teknologi untuk memastikan relevansi dengan kebutuhan industri masa depan.
                   </p>
                 </div>
               </div>
             </div>
 
             {/* Goal 4 */}
-            <div className="col-lg-3 col-md-6">
+            <div className="col-lg-4 col-md-6">
               <div 
                 className="card border-0 shadow-sm h-100"
                 style={{
@@ -353,10 +789,94 @@ export default function About() {
                     </svg>
                   </div>
                   <h4 className="fw-bold mb-3" style={{ fontSize: "1.3rem", color: "#1a1a1a" }}>
-                    Kreator & Inovator
+                    Karakter & Integritas
                   </h4>
                   <p className="text-muted mb-0" style={{ fontSize: "0.95rem", lineHeight: "1.7" }}>
-                    Menghasilkan kreator dan inovator yang peduli akan sosial, budaya dan lingkungan.
+                    Membentuk karakter yang kuat dan integritas tinggi melalui pendidikan nilai-nilai moral dan etika.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Goal 5 */}
+            <div className="col-lg-4 col-md-6">
+              <div 
+                className="card border-0 shadow-sm h-100"
+                style={{
+                  borderRadius: "20px",
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-10px)";
+                  e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.1)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "0 2px 8px rgba(0,0,0,0.08)";
+                }}
+              >
+                <div className="card-body p-4">
+                  <div 
+                    className="d-inline-flex align-items-center justify-content-center mb-3"
+                    style={{
+                      width: "60px",
+                      height: "60px",
+                      borderRadius: "15px",
+                      backgroundColor: "#f48a1d",
+                      color: "white"
+                    }}
+                  >
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                  </div>
+                  <h4 className="fw-bold mb-3" style={{ fontSize: "1.3rem", color: "#1a1a1a" }}>
+                    Perspektif Global
+                  </h4>
+                  <p className="text-muted mb-0" style={{ fontSize: "0.95rem", lineHeight: "1.7" }}>
+                    Mempersiapkan siswa dengan perspektif global dan kemampuan untuk bersaing di tingkat internasional.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Goal 6 */}
+            <div className="col-lg-4 col-md-6">
+              <div 
+                className="card border-0 shadow-sm h-100"
+                style={{
+                  borderRadius: "20px",
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-10px)";
+                  e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.1)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "0 2px 8px rgba(0,0,0,0.08)";
+                }}
+              >
+                <div className="card-body p-4">
+                  <div 
+                    className="d-inline-flex align-items-center justify-content-center mb-3"
+                    style={{
+                      width: "60px",
+                      height: "60px",
+                      borderRadius: "15px",
+                      backgroundColor: "#f48a1d",
+                      color: "white"
+                    }}
+                  >
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                    </svg>
+                  </div>
+                  <h4 className="fw-bold mb-3" style={{ fontSize: "1.3rem", color: "#1a1a1a" }}>
+                    Kolaborasi & Partnership
+                  </h4>
+                  <p className="text-muted mb-0" style={{ fontSize: "0.95rem", lineHeight: "1.7" }}>
+                    Membangun kemitraan strategis dengan industri dan institusi pendidikan untuk memperkaya pengalaman belajar.
                   </p>
                 </div>
               </div>
@@ -364,335 +884,7 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      {/* FAQ Section */}
-      <section 
-        className="position-relative"
-        style={{
-          paddingTop: "100px",
-          paddingBottom: "100px",
-          backgroundColor: "#f8f9fa"
-        }}
-      >
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-5 mb-5 mb-lg-0">
-              <div className="pe-lg-4">
-                <div className="d-inline-block mb-3">
-                  <span 
-                    className="badge"
-                    style={{
-                      backgroundColor: "#fff5eb",
-                      color: "#f48a1d",
-                      padding: "8px 20px",
-                      fontSize: "0.85rem",
-                      fontWeight: "600",
-                      letterSpacing: "1px"
-                    }}
-                  >
-                    FAQ
-                  </span>
-                </div>
-                <h2 
-                  className="fw-bold mb-4"
-                  style={{ 
-                    fontSize: "clamp(2rem, 4vw, 2.5rem)",
-                    lineHeight: "1.2",
-                    color: "#1a1a1a"
-                  }}
-                >
-                  Frequently Asked Questions
-                </h2>
-                <p 
-                  className="text-muted mb-4"
-                  style={{ 
-                    fontSize: "1rem",
-                    lineHeight: "1.8"
-                  }}
-                >
-                  Temukan jawaban untuk pertanyaan yang sering diajukan tentang program dan layanan kami.
-                </p>
-                <button 
-                  className="btn px-4 py-3 rounded-pill"
-                  style={{ 
-                    backgroundColor: "#f48a1d",
-                    color: "white",
-                    border: "none",
-                    fontSize: "0.95rem",
-                    fontWeight: "600",
-                    transition: "all 0.3s ease"
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = "#ff9f3d";
-                    e.currentTarget.style.transform = "translateY(-2px)";
-                    e.currentTarget.style.boxShadow = "0 10px 25px rgba(244, 138, 29, 0.3)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = "#f48a1d";
-                    e.currentTarget.style.transform = "translateY(0)";
-                    e.currentTarget.style.boxShadow = "none";
-                  }}
-                >
-                  Contact Us Now
-                </button>
-              </div>
-            </div>
-            <div className="col-lg-7">
-              <div className="accordion" id="faqAccordion">
-                {/* FAQ 1 */}
-                <div 
-                  className="mb-3"
-                  style={{
-                    backgroundColor: "white",
-                    borderRadius: "15px",
-                    overflow: "hidden",
-                    border: "none"
-                  }}
-                >
-                  <h2 className="accordion-header">
-                    <button
-                      className="accordion-button"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq1"
-                      aria-expanded="true"
-                      aria-controls="faq1"
-                      style={{
-                        backgroundColor: "white",
-                        color: "#1a1a1a",
-                        border: "none",
-                        padding: "1.5rem",
-                        fontSize: "1.05rem",
-                        fontWeight: "600",
-                        boxShadow: "none"
-                      }}
-                    >
-                      Apa saja program pendidikan yang ditawarkan?
-                    </button>
-                  </h2>
-                  <div
-                    id="faq1"
-                    className="accordion-collapse collapse show"
-                    data-bs-parent="#faqAccordion"
-                  >
-                    <div 
-                      className="accordion-body"
-                      style={{
-                        padding: "0 1.5rem 1.5rem 1.5rem",
-                        color: "#6c757d",
-                        fontSize: "0.95rem",
-                        lineHeight: "1.7"
-                      }}
-                    >
-                      Kami menawarkan berbagai program pendidikan mulai dari kursus profesional, pelatihan keterampilan digital, program sertifikasi, hingga workshop kolaboratif dengan industri. Semua program dirancang untuk mempersiapkan peserta menghadapi tantangan dunia kerja modern.
-                    </div>
-                  </div>
-                </div>
-
-                {/* FAQ 2 */}
-                <div 
-                  className="mb-3"
-                  style={{
-                    backgroundColor: "white",
-                    borderRadius: "15px",
-                    overflow: "hidden",
-                    border: "none"
-                  }}
-                >
-                  <h2 className="accordion-header">
-                    <button
-                      className="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq2"
-                      aria-expanded="false"
-                      aria-controls="faq2"
-                      style={{
-                        backgroundColor: "white",
-                        color: "#1a1a1a",
-                        border: "none",
-                        padding: "1.5rem",
-                        fontSize: "1.05rem",
-                        fontWeight: "600",
-                        boxShadow: "none"
-                      }}
-                    >
-                      Bagaimana cara mendaftar untuk program?
-                    </button>
-                  </h2>
-                  <div
-                    id="faq2"
-                    className="accordion-collapse collapse"
-                    data-bs-parent="#faqAccordion"
-                  >
-                    <div 
-                      className="accordion-body"
-                      style={{
-                        padding: "0 1.5rem 1.5rem 1.5rem",
-                        color: "#6c757d",
-                        fontSize: "0.95rem",
-                        lineHeight: "1.7"
-                      }}
-                    >
-                      Pendaftaran dapat dilakukan secara online melalui website kami atau dengan menghubungi tim support kami. Proses pendaftaran sangat mudah dan cepat, hanya memerlukan beberapa langkah untuk memulai perjalanan belajar Anda.
-                    </div>
-                  </div>
-                </div>
-
-                {/* FAQ 3 */}
-                <div 
-                  className="mb-3"
-                  style={{
-                    backgroundColor: "white",
-                    borderRadius: "15px",
-                    overflow: "hidden",
-                    border: "none"
-                  }}
-                >
-                  <h2 className="accordion-header">
-                    <button
-                      className="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq3"
-                      aria-expanded="false"
-                      aria-controls="faq3"
-                      style={{
-                        backgroundColor: "white",
-                        color: "#1a1a1a",
-                        border: "none",
-                        padding: "1.5rem",
-                        fontSize: "1.05rem",
-                        fontWeight: "600",
-                        boxShadow: "none"
-                      }}
-                    >
-                      Apakah tersedia sertifikat setelah menyelesaikan program?
-                    </button>
-                  </h2>
-                  <div
-                    id="faq3"
-                    className="accordion-collapse collapse"
-                    data-bs-parent="#faqAccordion"
-                  >
-                    <div 
-                      className="accordion-body"
-                      style={{
-                        padding: "0 1.5rem 1.5rem 1.5rem",
-                        color: "#6c757d",
-                        fontSize: "0.95rem",
-                        lineHeight: "1.7"
-                      }}
-                    >
-                      Ya, semua peserta yang berhasil menyelesaikan program akan mendapatkan sertifikat yang diakui industri. Sertifikat ini dapat digunakan untuk meningkatkan portofolio profesional Anda dan membuka peluang karir yang lebih baik.
-                    </div>
-                  </div>
-                </div>
-
-                {/* FAQ 4 */}
-                <div 
-                  className="mb-3"
-                  style={{
-                    backgroundColor: "white",
-                    borderRadius: "15px",
-                    overflow: "hidden",
-                    border: "none"
-                  }}
-                >
-                  <h2 className="accordion-header">
-                    <button
-                      className="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq4"
-                      aria-expanded="false"
-                      aria-controls="faq4"
-                      style={{
-                        backgroundColor: "white",
-                        color: "#1a1a1a",
-                        border: "none",
-                        padding: "1.5rem",
-                        fontSize: "1.05rem",
-                        fontWeight: "600",
-                        boxShadow: "none"
-                      }}
-                    >
-                      Apakah ada dukungan karir setelah program selesai?
-                    </button>
-                  </h2>
-                  <div
-                    id="faq4"
-                    className="accordion-collapse collapse"
-                    data-bs-parent="#faqAccordion"
-                  >
-                    <div 
-                      className="accordion-body"
-                      style={{
-                        padding: "0 1.5rem 1.5rem 1.5rem",
-                        color: "#6c757d",
-                        fontSize: "0.95rem",
-                        lineHeight: "1.7"
-                      }}
-                    >
-                      Tentu! Kami menyediakan layanan career support termasuk konsultasi karir, bantuan pembuatan CV, persiapan interview, dan akses ke jaringan partner industri kami untuk membantu Anda mendapatkan pekerjaan yang sesuai.
-                    </div>
-                  </div>
-                </div>
-
-                {/* FAQ 5 */}
-                <div 
-                  style={{
-                    backgroundColor: "white",
-                    borderRadius: "15px",
-                    overflow: "hidden",
-                    border: "none"
-                  }}
-                >
-                  <h2 className="accordion-header">
-                    <button
-                      className="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq5"
-                      aria-expanded="false"
-                      aria-controls="faq5"
-                      style={{
-                        backgroundColor: "white",
-                        color: "#1a1a1a",
-                        border: "none",
-                        padding: "1.5rem",
-                        fontSize: "1.05rem",
-                        fontWeight: "600",
-                        boxShadow: "none"
-                      }}
-                    >
-                      Berapa lama durasi setiap program?
-                    </button>
-                  </h2>
-                  <div
-                    id="faq5"
-                    className="accordion-collapse collapse"
-                    data-bs-parent="#faqAccordion"
-                  >
-                    <div 
-                      className="accordion-body"
-                      style={{
-                        padding: "0 1.5rem 1.5rem 1.5rem",
-                        color: "#6c757d",
-                        fontSize: "0.95rem",
-                        lineHeight: "1.7"
-                      }}
-                    >
-                      Durasi program bervariasi tergantung jenis dan tingkat kesulitannya, mulai dari workshop singkat 1-2 hari hingga program intensif 3-6 bulan. Kami juga menawarkan opsi pembelajaran fleksibel yang dapat disesuaikan dengan jadwal Anda.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      
       <section 
         className="position-relative overflow-hidden"
         style={{

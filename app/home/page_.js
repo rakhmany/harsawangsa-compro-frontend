@@ -33,7 +33,7 @@ export default function Home() {
                   src="/HEI-CompanyProfile.mp4"
                   className="w-100"
                   style={{ 
-                    height: "700px", 
+                    height: "600px", 
                     objectFit: "cover"
                   }}
                   autoPlay
@@ -191,6 +191,202 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Section 1 - Hero with Background Image */}
+      <section 
+        className="position-relative overflow-hidden"
+        style={{
+          minHeight: "90vh",
+          // background: "linear-gradient(135deg, #5B51D8 0%, #4834DF 50%, #3B2BCC 100%)",
+          paddingTop: "20vh",
+          paddingBottom: "80px"
+        }}
+      >
+        {/* Decorative Background Circles */}
+        <div 
+          className="position-absolute"
+          style={{
+            top: "-100px",
+            right: "-100px",
+            width: "500px",
+            height: "500px",
+            borderRadius: "50%",
+            background: "rgba(255, 255, 255, 0.05)",
+            filter: "blur(80px)"
+          }}
+        ></div>
+        <div 
+          className="position-absolute"
+          style={{
+            bottom: "-150px",
+            left: "-150px",
+            width: "600px",
+            height: "600px",
+            borderRadius: "50%",
+            background: "rgba(255, 255, 255, 0.03)",
+            filter: "blur(100px)"
+          }}
+        ></div>
+
+        <div className="container position-relative">
+          <div className="row align-items-center min-vh-75">
+            {/* Left Content */}
+            <div className="col-lg-6 mb-5 mb-lg-0">
+              <div className="pe-lg-5">
+                <h1 
+                  className="display-3 fw-bold mb-4"
+                  style={{ 
+                    lineHeight: "1.2",
+                    fontSize: "clamp(2.5rem, 5vw, 4rem)"
+                  }}
+                >
+                  Empower Your Future To{" "}
+                  <span 
+                    className="text-white  position-relative d-inline-block"
+                    style={{
+                      background: "linear-gradient(90deg, #FF6B9D 0%, #C471ED 100%)",
+                      borderRadius: "40px",
+                      padding: "0 20px",
+                      marginRight: "10px"
+                    }}
+                  >
+                    Harsa
+                  </span>
+                  <br />
+                  For{" "}
+                  <span 
+                    className="text-white position-relative d-inline-block"
+                    style={{
+                      background: "linear-gradient(90deg, #FFA502 0%, #FFD32D 100%)",
+                      borderRadius: "40px",
+                      padding: "0 20px",
+                      color: "#2c3e50"
+                    }}
+                  >
+                    Wangsa
+                  </span>
+                </h1>
+                
+                <p 
+                  className="mb-4 opacity-90"
+                  style={{ 
+                    fontSize: "1.1rem",
+                    lineHeight: "1.8",
+                    maxWidth: "500px"
+                  }}
+                >
+                  Want to improve your work skills? You need to study harder with 
+                  the help of a great mentor to improve your performance at work.
+                </p>
+
+                <button 
+                  className="btn btn-light btn-lg px-5 py-3 rounded-pill d-inline-flex align-items-center gap-3 hero-cta"
+                  style={{ 
+                    fontSize: "1rem",
+                    fontWeight: "600",
+                    boxShadow: "0 10px 30px rgba(0,0,0,0.2)"
+                  }}
+                >
+                  Get Started Now
+                  <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+                    <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            {/* Right Content - Image with Floating Elements */}
+            <div className="col-lg-6">
+              <div className="position-relative">
+                {/* Main Image */}
+                <div 
+                  className="position-relative"
+                  style={{
+                    borderRadius: "30px",
+                    overflow: "hidden",
+                    boxShadow: "0 20px 60px rgba(0,0,0,0.3)"
+                  }}
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800"
+                    alt="Student Learning"
+                    className="w-100"
+                    style={{ 
+                      height: "600px",
+                      objectFit: "cover"
+                    }}
+                  />
+                  
+                  {/* Overlay gradient */}
+                  <div 
+                    className="position-absolute bottom-0 start-0 w-100"
+                    style={{
+                      height: "200px",
+                      background: "linear-gradient(to top, rgba(0,0,0,0.4), transparent)"
+                    }}
+                  ></div>
+                </div>
+
+                {/* Floating Badge - Keep Learning */}
+                <div 
+                  className="position-absolute floating-badge"
+                  style={{
+                    top: "30px",
+                    right: "-20px",
+                    backgroundColor: "#fff",
+                    borderRadius: "20px",
+                    padding: "15px 20px",
+                    boxShadow: "0 10px 40px rgba(0,0,0,0.2)",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "12px",
+                    animation: "float 3s ease-in-out infinite"
+                  }}
+                >
+                  <div 
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      borderRadius: "50%",
+                      background: "linear-gradient(135deg, #FF6B9D 0%, #C471ED 100%)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center"
+                    }}
+                  >
+                    <svg width="20" height="20" viewBox="0 0 16 16" fill="white">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                      <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="fw-bold text-dark" style={{ fontSize: "0.9rem" }}>
+                      Keep learning,
+                    </div>
+                    <div className="text-muted" style={{ fontSize: "0.85rem" }}>
+                      let's rock!
+                    </div>
+                  </div>
+                </div>
+
+                {/* Decorative dots */}
+                <div 
+                  className="position-absolute"
+                  style={{
+                    bottom: "-30px",
+                    right: "50px",
+                    width: "100px",
+                    height: "100px",
+                    backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.3) 2px, transparent 2px)",
+                    backgroundSize: "20px 20px"
+                  }}
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>    
+
 
       {/* Section 2 */}
       <section 

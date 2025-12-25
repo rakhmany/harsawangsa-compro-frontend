@@ -17,7 +17,7 @@
 
 .mainContent {
   display: flex;
-  gap: 4rem;
+  /* gap: 4rem; */
   padding-bottom: 3rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -199,7 +199,7 @@
   }
 
   .mainContent {
-    gap: 2rem;
+    /* gap: 2rem; */
   }
 
   .brandSection {
@@ -220,7 +220,7 @@
 
   .bottomLinks {
     flex-direction: column;
-    gap: 0.75rem;
+    /* gap: 0.75rem; */
   }
 }
 
@@ -236,7 +236,7 @@
   }
 
   .mainContent {
-    gap: 5rem;
+    /* gap: 5rem; */
   }
 
   .brandSection {
@@ -268,11 +268,11 @@
   }
 
   .mainContent {
-    gap: 6rem;
+    /* gap: 6rem; */
   }
 
   .brandSection {
-    flex: 0 0 450px;
+    /* flex: 0 0 450px; */
   }
 
   .logoTitle {
@@ -299,4 +299,78 @@
   .bottomLink {
     font-size: 0.95rem;
   }
+}
+
+/* Newsletter Section */
+.linksSectionOffice {
+  flex: 1;
+  min-width: 200px;
+}
+
+.newsletterForm {
+  margin-top: 1.5rem;
+}
+
+.newsletterDescription {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.newsletterInput {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  transition: all 0.3s ease;
+  margin-bottom: 0.75rem;
+}
+
+.newsletterInput::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.newsletterInput:focus {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.newsletterButton {
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.newsletterButton:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.newsletterButton:active {
+  transform: translateY(0);
+}
+
+.newsletterButton::after {
+  content: '→';
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
 }
