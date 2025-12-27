@@ -9,7 +9,7 @@ export default function Explore() {
 
       {/* Mission Section */}
       <section 
-        className="position-relative overflow-hidden"
+        className="position-relative overflow-hidden bg-fullorange"
         style={{
           minHeight: "70vh",
           paddingTop: "20vh",

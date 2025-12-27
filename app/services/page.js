@@ -11,7 +11,7 @@ export default function Services() {
 
       {/* Mission Section */}
       <section 
-        className="position-relative overflow-hidden"
+        className="position-relative overflow-hidden bg-fullorange"
         style={{
           minHeight: "70vh",
           paddingTop: "20vh",

@@ -1,12 +1,22 @@
 // Navbar.js
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "../style/Navbar.module.css";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <nav className={styles.navbar}>
@@ -30,11 +40,12 @@ export default function Navbar() {
           </Link>
 
         {/* Menu Items */}
-        <ul className={styles.menu}>
+        <ul className={`${styles.menu} ${isMobileMenuOpen ? styles.menuOpen : ''}`}>
             <li>
               <Link 
                 href="/" 
                 className={`${styles.menuLink} ${pathname === "/" ? styles.menuLinkActive : ""}`}
+                onClick={closeMobileMenu}
               >
                 Home
               </Link>
@@ -43,6 +54,7 @@ export default function Navbar() {
               <Link 
                 href="/about" 
                 className={`${styles.menuLink} ${pathname === "/about/" ? styles.menuLinkActive : ""}`}
+                onClick={closeMobileMenu}
               >
                 About
               </Link>
@@ -51,6 +63,7 @@ export default function Navbar() {
               <Link 
                 href="/services" 
                 className={`${styles.menuLink} ${pathname === "/services/" ? styles.menuLinkActive : ""}`}
+                onClick={closeMobileMenu}
               >
                 Services
               </Link>
@@ -59,6 +72,7 @@ export default function Navbar() {
               <Link 
                 href="/explore" 
                 className={`${styles.menuLink} ${pathname === "/explore/" ? styles.menuLinkActive : ""}`}
+                onClick={closeMobileMenu}
               >
                 Explore
               </Link>
@@ -71,25 +85,37 @@ export default function Navbar() {
         </ul>
 
         {/* Auth Buttons */}
-        <div className={styles.authButtons}>
+        {/* <div className={styles.authButtons}>
           <Link href="/contact" className={styles.contactusBtn}>
             Contact Us
           </Link>
-          {/* <Link href="/register" className={styles.registerBtn}>
+          <Link href="/register" className={styles.registerBtn}>
             Register
           </Link>
           <Link href="/login" className={styles.loginBtn}>
             Login
-          </Link> */}
-        </div>
+          </Link>
+        </div> */}
 
         {/* Mobile Menu Toggle */}
-        <button className={styles.mobileToggle} aria-label="Toggle menu">
+        <button 
+          className={`${styles.mobileToggle} ${isMobileMenuOpen ? styles.mobileToggleOpen : ''}`}
+          onClick={toggleMobileMenu}
+          aria-label="Toggle menu"
+        >
           <span></span>
           <span></span>
           <span></span>
         </button>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div 
+          className={styles.mobileOverlay} 
+          onClick={closeMobileMenu}
+        />
+      )}
     </nav>
   );
 }
