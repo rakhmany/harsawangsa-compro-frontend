@@ -1,6 +1,7 @@
 "use client";
 
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function Explore() {
   return (
@@ -752,7 +753,7 @@ export default function Explore() {
         </div>
       </section>
       
-      
+      <Footer />
     </>
   );
 }

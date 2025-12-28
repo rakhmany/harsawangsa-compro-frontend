@@ -3,7 +3,6 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import BootstrapClient from "./components/BootstrapClient";
-import Footer from "./components/Footer";
 
 
 const poppins = Poppins({
@@ -27,12 +26,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="stylesheet" href="/assets/css/icons.css" />
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />      
+      </head>
       <body
         className={`${poppins.variable} antialiased`}
       >
         <BootstrapClient />
         {children}
-        <Footer />
       </body>
     </html>
   );

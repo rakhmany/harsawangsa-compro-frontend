@@ -1,6 +1,7 @@
 "use client";
 
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function Services() {
   return (
@@ -343,7 +344,7 @@ export default function Services() {
         </div>
       </section>
       
-      
+      <Footer />
     </>
   );
 }
