@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { apiFetch } from "@/lib/config";
 
 export default function SysadminPage() {
     const [contents, setContents] = useState([]);
@@ -10,7 +11,7 @@ export default function SysadminPage() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await fetch("http://localhost:3001/api/content");
+                const res = await apiFetch("/api/content");
                 if (res.ok) {
                     const data = await res.json();
                     setContents(data);

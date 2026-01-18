@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { apiFetch } from "@/lib/config";
 
 export default function ContentManagementPage() {
     const [contents, setContents] = useState([]);
@@ -18,14 +19,12 @@ export default function ContentManagementPage() {
 
     const fetchContents = async () => {
         try {
-            const res = await fetch("http://localhost:3001/api/content");
-            if (res.ok) {
-                const data = await res.json();
-                setContents(data);
-            }
-        } catch (err) {
-            console.error("Fetch error:", err);
-        } finally {
+            const response = await apiFetch("/api/content");
+            const data = await response.json();
+            setContents(data);
+            setLoading(false);
+        } catch (error) {
+            console.error("Error fetching content:", error);
             setLoading(false);
         }
     };
@@ -33,24 +32,45 @@ export default function ContentManagementPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch("http://localhost:3001/api/content", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+            const endpoint = editingContent 
+                ? `/api/content/${editingContent.content_id}`
+                : "/api/content";
+            
+            const method = editingContent ? "PUT" : "POST";
+            
+            const response = await apiFetch(endpoint, {
+                method,
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData)
             });
-            
-            if (res.ok) {
-                alert('Content berhasil ditambahkan!');
-                setFormData({ section: '', title: '', description: '' });
-                setShowModal(false);
+
+            if (response.ok) {
                 fetchContents();
+                closeModal();
             }
-        } catch (err) {
-            console.error('Error:', err);
-            alert('Gagal menambahkan content');
+        } catch (error) {
+            console.error("Error saving content:", error);
         }
+        // e.preventDefault();
+        // try {
+        //     const res = await fetch("http://localhost:3001/api/content", {
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type': 'application/json',
+        //         },
+        //         body: JSON.stringify(formData)
+        //     });
+            
+        //     if (res.ok) {
+        //         alert('Content berhasil ditambahkan!');
+        //         setFormData({ section: '', title: '', description: '' });
+        //         setShowModal(false);
+        //         fetchContents();
+        //     }
+        // } catch (err) {
+        //     console.error('Error:', err);
+        //     alert('Gagal menambahkan content');
+        // }
     };
 
     return (

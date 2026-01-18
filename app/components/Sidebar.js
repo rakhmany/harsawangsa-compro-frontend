@@ -5,6 +5,11 @@ import { usePathname } from "next/navigation";
 
 export default function Sidebar() {
   const pathname = usePathname();
+  
+  // Normalize pathname - hapus trailing slash untuk matching yang akurat
+  const normalizedPathname = pathname.endsWith('/') && pathname !== '/' 
+    ? pathname.slice(0, -1) 
+    : pathname;
 
   const menuItems = [
     {
@@ -45,6 +50,11 @@ export default function Sidebar() {
       href: "/sysadmin/messages",
     },
     {
+      label: "Menu Management",
+      icon: "mdi mdi-menu",
+      href: "/sysadmin/menus",
+    },
+    {
       label: "Users",
       icon: "mdi mdi-account-group",
       href: "/sysadmin/users",
@@ -83,41 +93,46 @@ export default function Sidebar() {
   return (
     <>
       {/* Sidebar */}
-      <div className="vertical-menu" style={{ background: 'white', borderRight: '1px solid #f0f0f0' }}>
-        <div data-simplebar className="h-100">
+      <div className="vertical-menu" style={{ background: 'white', borderRight: '1px solid #f0f0f0', height: '100vh', position: 'fixed', top: 0, left: 0, overflowY: 'auto', overflowX: 'hidden' }}>
+        <div className="h-100" style={{ paddingTop: '70px', paddingBottom: '20px' }}>
           <div id="sidebar-menu">
             {/* Left Menu Start */}
             <ul className="metismenu list-unstyled" id="side-menu">
               <li className="menu-title" key="menu" style={{ color: '#98a6ad', fontSize: '11px', fontWeight: '600', textTransform: 'uppercase', padding: '15px 20px 5px', letterSpacing: '0.5px' }}>Menu</li>
 
-              {menuItems.map((item, index) => (
-                <li key={index} className={pathname === item.href ? "mm-active" : ""}>
-                  <Link 
-                    href={item.href} 
-                    className={`waves-effect ${pathname === item.href ? "active" : ""}`}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      padding: '12px 20px',
-                      color: pathname === item.href ? '#1e88e5' : '#6c757d',
-                      textDecoration: 'none',
-                      fontSize: '14px',
-                      fontWeight: pathname === item.href ? '600' : '500',
-                      background: pathname === item.href ? 'rgba(30, 136, 229, 0.1)' : 'transparent',
-                      borderLeft: pathname === item.href ? '3px solid #1e88e5' : '3px solid transparent',
-                      transition: 'all 0.2s ease'
-                    }}
-                  >
-                    <i className={item.icon} style={{ fontSize: '18px', marginRight: '12px', minWidth: '20px' }}></i>
-                    <span className="menu-text">{item.label}</span>
-                    {item.badge && (
-                      <span className={`badge ${item.badgeColor} rounded-pill ms-auto`} style={{ fontSize: '10px', padding: '3px 7px' }}>
-                        {item.badge}
-                      </span>
-                    )}
-                  </Link>
-                </li>
-              ))}
+              {menuItems.map((item, index) => {
+                const isActive = normalizedPathname === item.href;
+                return (
+                  <li key={index} className={isActive ? "mm-active" : ""}>
+                    <Link 
+                      href={item.href} 
+                      className={`waves-effect ${isActive ? "active" : ""}`}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        padding: '12px 20px',
+                        color: isActive ? '#f48a1d' : '#20202093',
+                        textDecoration: 'none',
+                        fontSize: '14px',
+                        fontWeight: isActive ? '700' : '500',
+                        background: isActive ? '#f4891d4c' : 'transparent',
+                        borderLeft: isActive ? '4px solid #f48a1d' : '4px solid transparent',
+                        transition: 'all 0.2s ease',
+                        boxShadow: isActive ? 'inset 0 0 10px rgba(244, 138, 29, 0.1)' : 'none',
+                        position: 'relative'
+                      }}
+                    >
+                      <i className={item.icon} style={{ fontSize: '18px', marginRight: '12px', minWidth: '20px' }}></i>
+                      <span className="menu-text">{item.label}</span>
+                      {item.badge && (
+                        <span className={`badge ${item.badgeColor} rounded-pill ms-auto`} style={{ fontSize: '10px', padding: '3px 7px' }}>
+                          {item.badge}
+                        </span>
+                      )}
+                    </Link>
+                  </li>
+                );
+              })}
 
               <li className="menu-title mt-3" key="apps" style={{ color: '#98a6ad', fontSize: '11px', fontWeight: '600', textTransform: 'uppercase', padding: '15px 20px 5px', letterSpacing: '0.5px' }}>Apps</li>
               
@@ -196,6 +211,34 @@ export default function Sidebar() {
       {/* Left Sidebar End */}
 
       <style jsx global>{`
+        /* Active menu state - SUPER IMPORTANT untuk visibility */
+        .vertical-menu li.mm-active > a,
+        .vertical-menu a.active {
+          color: #f48a1d !important;
+          background: rgba(244, 138, 29, 0.1) !important;
+          border-left: 4px solid #f48a1d !important;
+          font-weight: 700 !important;
+          box-shadow: inset 0 0 10px rgba(244, 138, 29, 0.1) !important;
+        }
+
+        /* Scrollbar styling untuk sidebar */
+        .vertical-menu::-webkit-scrollbar {
+          width: 6px;
+        }
+
+        .vertical-menu::-webkit-scrollbar-track {
+          background: #f1f1f1;
+        }
+
+        .vertical-menu::-webkit-scrollbar-thumb {
+          background: #c1c1c1;
+          border-radius: 3px;
+        }
+
+        .vertical-menu::-webkit-scrollbar-thumb:hover {
+          background: #a8a8a8;
+        }
+
         /* Sidebar collapsed state */
         body:not(.sidebar-enable) .vertical-menu {
           margin-left: 0;
@@ -231,10 +274,25 @@ export default function Sidebar() {
           margin-left: 240px;
         }
 
-        /* Hover effects */
+        /* Hover effects - ORANGE COLOR #f48a1d */
         .vertical-menu a:hover {
-          color: #1e88e5 !important;
-          background: rgba(30, 136, 229, 0.05) !important;
+          color: #f48a1d !important;
+          background: rgba(244, 138, 29, 0.08) !important;
+        }
+
+        .vertical-menu a:hover i {
+          color: #f48a1d !important;
+        }
+
+        .vertical-menu ul li a:hover {
+          color: #f48a1d !important;
+          background: rgba(244, 138, 29, 0.08) !important;
+        }
+
+        /* Override any blue hover from template */
+        .vertical-menu .waves-effect:hover {
+          color: #f48a1d !important;
+          background: rgba(244, 138, 29, 0.08) !important;
         }
 
         /* Transition for smooth animation */

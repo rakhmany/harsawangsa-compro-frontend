@@ -234,6 +234,32 @@ CREATE TABLE IF NOT EXISTS media_library (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ============================================
+-- Table: menus
+-- Description: Menu navigation management
+-- ============================================
+CREATE TABLE IF NOT EXISTS menus (
+    menu_id INT AUTO_INCREMENT PRIMARY KEY,
+    parent_id INT DEFAULT NULL,
+    title VARCHAR(100) NOT NULL,
+    slug VARCHAR(100) NOT NULL,
+    url VARCHAR(255) DEFAULT NULL,
+    icon VARCHAR(100) DEFAULT NULL,
+    target VARCHAR(20) DEFAULT '_self',
+    css_class VARCHAR(100) DEFAULT NULL,
+    display_order INT DEFAULT 0,
+    menu_location ENUM('header', 'footer', 'sidebar', 'mobile') DEFAULT 'header',
+    is_active BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (parent_id) REFERENCES menus(menu_id) ON DELETE CASCADE,
+    INDEX idx_parent (parent_id),
+    INDEX idx_slug (slug),
+    INDEX idx_display_order (display_order),
+    INDEX idx_location (menu_location),
+    INDEX idx_is_active (is_active)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ============================================
 -- INSERT INITIAL DATA
 -- ============================================
 
@@ -323,6 +349,15 @@ INSERT INTO site_settings (setting_key, setting_value, setting_type, description
 ('meta_description', 'Harsawangsa Edukasi Indonesia - Partner terpercaya untuk solusi digital kreatif', 'text', 'Default meta description'),
 ('meta_keywords', 'harsawangsa, edukasi, game development, web development, digital agency', 'text', 'Default meta keywords')
 ON DUPLICATE KEY UPDATE setting_value = VALUES(setting_value);
+
+-- Insert Sample Menus
+INSERT INTO menus (parent_id, title, slug, url, menu_location, display_order, is_active) VALUES
+(NULL, 'Home', 'home', '/', 'header', 1, 1),
+(NULL, 'About', 'about', '/about', 'header', 2, 1),
+(NULL, 'Services', 'services', '/services', 'header', 3, 1),
+(NULL, 'Explore', 'explore', '/explore', 'header', 4, 1),
+(NULL, 'Contact', 'contact', '/contact', 'header', 5, 1)
+ON DUPLICATE KEY UPDATE title = VALUES(title);
 
 -- ============================================
 -- CREATE VIEWS
@@ -504,7 +539,9 @@ SELECT 'contact_messages', COUNT(*) FROM contact_messages
 UNION ALL
 SELECT 'site_settings', COUNT(*) FROM site_settings
 UNION ALL
-SELECT 'media_library', COUNT(*) FROM media_library;
+SELECT 'media_library', COUNT(*) FROM media_library
+UNION ALL
+SELECT 'menus', COUNT(*) FROM menus;
 
 -- ============================================
 -- QUICK START GUIDE

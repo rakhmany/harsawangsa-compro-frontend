@@ -24,20 +24,25 @@ export default function Topbar() {
   };
 
   return (
-    <header id="page-topbar" style={{ background: 'linear-gradient(135deg, #1e88e5 0%, #1976d2 100%)', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}>
+    <header id="page-topbar" style={{ background: '#f48a1d', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}>
       <div className="navbar-header">
         <div className="d-flex align-items-center">
           {/* LOGO */}
           <div className="navbar-brand-box" style={{ background: 'transparent' }}>
-            <Link href="/sysadmin" className="logo logo-light">
-              <span className="logo-sm">
-                <img src="/harsawangsa-orange-square.png" alt="" height="28" />
+              <a href="/sysadmin" className="logo logo-dark">
+                <span className="logo-lg" style={{ display: 'flex', alignItems: 'center' }}>
+                <img src="/harsawangsa-white.png" alt="" height="28" />
+                <div className="d-flex flex-column ms-2">
+                  <span className="fw-bold" style={{ fontSize: "1.0rem", lineHeight: "1.2", letterSpacing: "0.05em", color : "#ffffff" }}>
+                    HARSAWANGSA
+                  </span>
+                  <span className="fw-normal text-white" style={{ fontSize: "0.6rem", lineHeight: "1", letterSpacing: "0.1em" }}>
+                    EDUKASI INDONESIA
+                  </span>
+                </div>
               </span>
-              <span className="logo-lg" style={{ display: 'flex', alignItems: 'center' }}>
-                <img src="/harsawangsa-orange-square.png" alt="" height="28" />
-                <span className="logo-txt ms-2 text-white fw-bold" style={{ fontSize: '18px', whiteSpace: 'nowrap' }}>HARSAWANGSA</span>
-              </span>
-            </Link>
+              </a>
+              
           </div>
 
           <button
@@ -154,7 +159,7 @@ export default function Topbar() {
             >
               <img
                 className="rounded-circle header-profile-user"
-                src="/assets/images/users/avatar-1.jpg"
+                src="/assets/images/users/avatar-1.png"
                 alt="Header Avatar"
                 style={{ width: '32px', height: '32px', objectFit: 'cover' }}
                 onError={(e) => {

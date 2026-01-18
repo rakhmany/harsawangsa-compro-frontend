@@ -1,5 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
+import { apiFetch } from "@/lib/config";
+
 
 export default function ServicesPage() {
     const [services, setServices] = useState([]);
@@ -21,10 +23,10 @@ export default function ServicesPage() {
     useEffect(() => {
         fetchServices();
     }, []);
-
+    
     const fetchServices = async () => {
         try {
-            const response = await fetch("http://localhost:3001/api/services");
+            const response = await apiFetch("/api/services");
             const data = await response.json();
             setServices(data);
             setLoading(false);
@@ -37,13 +39,13 @@ export default function ServicesPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const url = editingService 
-                ? `http://localhost:5000/api/services/${editingService.service_id}`
-                : "http://localhost:5000/api/services";
+            const endpoint = editingService 
+                ? `/api/services/${editingService.service_id}`
+                : "/api/services";
             
             const method = editingService ? "PUT" : "POST";
             
-            const response = await fetch(url, {
+            const response = await apiFetch(endpoint, {
                 method,
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData)
@@ -62,7 +64,7 @@ export default function ServicesPage() {
         if (!confirm("Are you sure you want to delete this service?")) return;
         
         try {
-            const response = await fetch(`http://localhost:5000/api/services/${serviceId}`, {
+            const response = await apiFetch(`/api/services/${serviceId}`, {
                 method: "DELETE"
             });
 

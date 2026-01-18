@@ -13,7 +13,7 @@ export default function ContactMessagesPage() {
 
     const fetchMessages = async () => {
         try {
-            const response = await fetch("http://localhost:5000/api/contact");
+            const response = await fetch("http://localhost:3001/api/contact");
             const data = await response.json();
             setMessages(data);
             setLoading(false);
@@ -25,7 +25,7 @@ export default function ContactMessagesPage() {
 
     const handleStatusUpdate = async (messageId, status) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/contact/${messageId}/status`, {
+            const response = await fetch(`http://localhost:3001/api/contact/${messageId}/status`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ status, replied_by: 1 })
@@ -43,7 +43,7 @@ export default function ContactMessagesPage() {
         if (!confirm("Are you sure you want to delete this message?")) return;
         
         try {
-            const response = await fetch(`http://localhost:5000/api/contact/${messageId}`, {
+            const response = await fetch(`http://localhost:3001/api/contact/${messageId}`, {
                 method: "DELETE"
             });
 
