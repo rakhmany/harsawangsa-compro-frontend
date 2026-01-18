@@ -34,18 +34,18 @@ export default function SysadminLayout({
       
       <BootstrapClient />
       
-      <div id="layout-wrapper">
+      <div id="layout-wrapper" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <Topbar />
         <Sidebar />
         
         {/* Main Content */}
-        <div className="main-content">
-          <div className="page-content">
+        <div className="main-content" style={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: 'calc(100vh - 70px)' }}>
+          <div className="page-content" style={{ flex: 1 }}>
             <div className="container-fluid">
               {children}
             </div>
           </div>
-            <FooterAdmin />
+          <FooterAdmin />
         </div>
       </div>
     </>

@@ -1,13 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function Topbar() {
   const [searchQuery, setSearchQuery] = useState("");
 
+  // Set sidebar terbuka secara default
+  useEffect(() => {
+    document.body.classList.add("sidebar-enable");
+  }, []);
+
   const toggleMenu = () => {
     document.body.classList.toggle("sidebar-enable");
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      console.log("Searching for:", searchQuery);
+      // Tambahkan logika search di sini
+    }
   };
 
   return (
@@ -20,9 +33,9 @@ export default function Topbar() {
               <span className="logo-sm">
                 <img src="/harsawangsa-orange-square.png" alt="" height="28" />
               </span>
-              <span className="logo-lg d-flex align-items-center">
+              <span className="logo-lg" style={{ display: 'flex', alignItems: 'center' }}>
                 <img src="/harsawangsa-orange-square.png" alt="" height="28" />
-                <span className="logo-txt ms-2 text-white fw-bold" style={{ fontSize: '18px' }}>HARSAWANGSA</span>
+                <span className="logo-txt ms-2 text-white fw-bold" style={{ fontSize: '18px', whiteSpace: 'nowrap' }}>HARSAWANGSA</span>
               </span>
             </Link>
           </div>
@@ -38,7 +51,7 @@ export default function Topbar() {
           </button>
 
           {/* App Search - Centered */}
-          <form className="app-search d-none d-lg-block ms-4" style={{ flex: '0 0 400px' }}>
+          <form className="app-search d-none d-lg-block ms-4" style={{ flex: '0 0 400px' }} onSubmit={handleSearch}>
             <div className="position-relative">
               <input
                 type="text"
@@ -51,13 +64,14 @@ export default function Topbar() {
                   border: 'none',
                   color: 'white',
                   borderRadius: '6px',
-                  paddingLeft: '40px'
+                  paddingLeft: '40px',
+                  paddingRight: '15px'
                 }}
               />
               <button 
                 type="submit" 
                 className="btn position-absolute" 
-                style={{ left: '10px', top: '50%', transform: 'translateY(-50%)', background: 'transparent', border: 'none', padding: 0 }}
+                style={{ left: '10px', top: '50%', transform: 'translateY(-50%)', background: 'transparent', border: 'none', padding: 0, pointerEvents: 'none' }}
               >
                 <i className="mdi mdi-magnify text-white font-size-18"></i>
               </button>
@@ -67,7 +81,7 @@ export default function Topbar() {
 
         <div className="d-flex align-items-center">
           {/* Language Selector */}
-          <div className="dropdown d-none d-lg-inline-block">
+          {/* <div className="dropdown d-none d-lg-inline-block">
             <button
               type="button"
               className="btn header-item noti-icon waves-effect text-white"
@@ -75,10 +89,10 @@ export default function Topbar() {
             >
               <img src="https://flagcdn.com/w40/us.png" alt="English" height="16" className="me-1" />
             </button>
-          </div>
+          </div> */}
 
           {/* Dark/Light Mode */}
-          <div className="dropdown d-inline-block">
+          {/* <div className="dropdown d-inline-block">
             <button
               type="button"
               className="btn header-item noti-icon waves-effect text-white"
@@ -93,10 +107,10 @@ export default function Topbar() {
             >
               <i className="mdi mdi-weather-night font-size-20"></i>
             </button>
-          </div>
+          </div> */}
 
           {/* Grid/Apps */}
-          <div className="dropdown d-none d-lg-inline-block">
+          {/* <div className="dropdown d-none d-lg-inline-block">
             <button
               type="button"
               className="btn header-item noti-icon waves-effect text-white"
@@ -104,10 +118,10 @@ export default function Topbar() {
             >
               <i className="mdi mdi-apps font-size-20"></i>
             </button>
-          </div>
+          </div> */}
 
           {/* Notification */}
-          <div className="dropdown d-inline-block">
+          {/* <div className="dropdown d-inline-block">
             <button
               type="button"
               className="btn header-item noti-icon waves-effect text-white position-relative"
@@ -117,7 +131,7 @@ export default function Topbar() {
               <i className="mdi mdi-bell-outline font-size-20"></i>
               <span className="badge bg-danger rounded-pill position-absolute" style={{ top: '8px', right: '8px', fontSize: '9px', padding: '2px 5px' }}>3</span>
             </button>
-          </div>
+          </div> */}
 
           {/* Settings */}
           <div className="dropdown d-none d-lg-inline-block">

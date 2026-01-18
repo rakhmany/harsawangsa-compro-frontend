@@ -20,6 +20,31 @@ export default function Sidebar() {
       href: "/sysadmin/content",
     },
     {
+      label: "Company Values",
+      icon: "mdi mdi-star-circle",
+      href: "/sysadmin/company-values",
+    },
+    {
+      label: "Team Members",
+      icon: "mdi mdi-account-multiple",
+      href: "/sysadmin/team-members",
+    },
+    {
+      label: "Portfolio",
+      icon: "mdi mdi-briefcase",
+      href: "/sysadmin/portfolio",
+    },
+    {
+      label: "Services",
+      icon: "mdi mdi-tools",
+      href: "/sysadmin/services",
+    },
+    {
+      label: "Messages",
+      icon: "mdi mdi-email",
+      href: "/sysadmin/messages",
+    },
+    {
       label: "Users",
       icon: "mdi mdi-account-group",
       href: "/sysadmin/users",

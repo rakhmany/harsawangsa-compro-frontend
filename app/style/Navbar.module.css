@@ -34,6 +34,35 @@
   padding-left: 0.5rem;
 }
 
+/* Menu Wrapper for scroll functionality */
+.menuWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.menuWrapper::-webkit-scrollbar {
+  height: 4px;
+}
+
+.menuWrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.menuWrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.menuWrapper::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
 .logoIcon {
   width: 32px;
   height: 32px;
@@ -72,8 +101,9 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  flex: 1;
   justify-content: center;
+  min-width: min-content;
+  flex-wrap: nowrap;
 }
 
 .menuLink {
@@ -259,25 +289,35 @@
     border-radius: 35px;
   }
 
-  .menu {
+  .menuWrapper {
     position: fixed;
     top: 0;
     right: -100%;
     width: 280px;
     height: 100vh;
     background-color: #f48a1d;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: right 0.4s ease-in-out;
+    z-index: 999;
+    display: block;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+  }
+
+  .menu {
     flex-direction: column;
     padding: 5rem 2rem 2rem;
     gap: 2rem;
-    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
-    transition: right 0.4s ease-in-out;
-    z-index: 999;
-    overflow-y: auto;
     align-items: flex-start;
     justify-content: flex-start;
+    width: 100%;
   }
 
   .menuOpen {
+    right: 0;
+  }
+  
+  .menuWrapper:has(.menuOpen) {
     right: 0;
   }
 

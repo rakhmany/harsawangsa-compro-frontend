@@ -26,7 +26,7 @@ export default function NavbarAdmin() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarAdminContent">
+        <div className="navbar-collapse collapse" id="navbarAdminContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link 

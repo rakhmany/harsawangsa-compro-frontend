@@ -39,50 +39,52 @@ export default function Navbar() {
             </div>
           </Link>
 
-        {/* Menu Items */}
-        <ul className={`${styles.menu} ${isMobileMenuOpen ? styles.menuOpen : ''}`}>
-            <li>
-              <Link 
-                href="/" 
-                className={`${styles.menuLink} ${pathname === "/" ? styles.menuLinkActive : ""}`}
-                onClick={closeMobileMenu}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link 
-                href="/about" 
-                className={`${styles.menuLink} ${pathname === "/about/" ? styles.menuLinkActive : ""}`}
-                onClick={closeMobileMenu}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link 
-                href="/services" 
-                className={`${styles.menuLink} ${pathname === "/services/" ? styles.menuLinkActive : ""}`}
-                onClick={closeMobileMenu}
-              >
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link 
-                href="/explore" 
-                className={`${styles.menuLink} ${pathname === "/explore/" ? styles.menuLinkActive : ""}`}
-                onClick={closeMobileMenu}
-              >
-                Explore
-              </Link>
-            </li>
-            {/* <li>
-              <Link href="/latest-tips" className={styles.menuLink}>
-                Latest Tips
-              </Link>
-            </li> */}
-        </ul>
+        {/* Menu Items - Always visible on desktop */}
+        <div className={styles.menuWrapper}>
+          <ul className={`${styles.menu} ${isMobileMenuOpen ? styles.menuOpen : ''}`}>
+              <li>
+                <Link 
+                  href="/" 
+                  className={`${styles.menuLink} ${pathname === "/" ? styles.menuLinkActive : ""}`}
+                  onClick={closeMobileMenu}
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/about" 
+                  className={`${styles.menuLink} ${pathname === "/about/" ? styles.menuLinkActive : ""}`}
+                  onClick={closeMobileMenu}
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/services" 
+                  className={`${styles.menuLink} ${pathname === "/services/" ? styles.menuLinkActive : ""}`}
+                  onClick={closeMobileMenu}
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/explore" 
+                  className={`${styles.menuLink} ${pathname === "/explore/" ? styles.menuLinkActive : ""}`}
+                  onClick={closeMobileMenu}
+                >
+                  Explore
+                </Link>
+              </li>
+              {/* <li>
+                <Link href="/latest-tips" className={styles.menuLink}>
+                  Latest Tips
+                </Link>
+              </li> */}
+          </ul>
+        </div>
 
         {/* Auth Buttons */}
         {/* <div className={styles.authButtons}>
